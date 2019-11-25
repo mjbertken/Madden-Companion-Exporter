@@ -1,5 +1,5 @@
 const express = require('express');
-// const admin = require('firebase-admin');
+const admin = require('firebase-admin');
 
 const app = express();
 
@@ -15,9 +15,9 @@ const serviceAccount = require("path/to/serviceAccountKey.json");
 // });
 
 
-var admin = require("firebase-admin");
+// var admin = require("firebase-admin");
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
+// var serviceAccount = require("path/to/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
