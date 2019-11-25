@@ -1,5 +1,5 @@
 const express = require('express');
-const admin = require('firebase-admin');
+// const admin = require('firebase-admin');
 
 const app = express();
 
@@ -9,10 +9,21 @@ const serviceAccount = require("path/to/serviceAccountKey.json");
 
 // TODO: Enter your database url from firebase
 
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://maddentest-80070.firebaseio.com"
+// });
+
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://maddentest-80070.firebaseio.com"
 });
+
 
 app.set('port', (process.env.PORT || 3001));
 
