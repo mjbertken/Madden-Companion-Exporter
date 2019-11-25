@@ -1,7 +1,7 @@
 
   
 const express = require('express');
-const admin = require('firebase-admin');
+// const admin = require('firebase-admin');
 
 const app = express();
 
@@ -14,7 +14,7 @@ const app = express();
 
 // TODO: Enter your database url from firebase
 // var admin = require("firebase-admin");
-
+const admin = require('firebase-admin');
 var serviceAccount = require("path/to/serviceAccountKey.json");
 
 admin.initializeApp({
