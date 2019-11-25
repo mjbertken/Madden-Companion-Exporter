@@ -1,8 +1,20 @@
+
+  
 const express = require('express');
 const admin = require('firebase-admin');
 
 const app = express();
 
+// TODO: Enter the path to your service account json file
+// Need help with this step go here: https://firebase.google.com/docs/admin/setup
+const serviceAccount = require("./serviceAccountKey.json");
+
+// TODO: Enter your database url from firebase
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://maddentest-80070.firebaseio.com"
+});
+//
 // TODO: Enter the path to your service account json file
 // Need help with this step go here: https://firebase.google.com/docs/admin/setup
 // const serviceAccount = require("path/to/serviceAccountKey.json");
@@ -20,10 +32,11 @@ const serviceAccount = require("serviceAccountKey.json");
 
 // var serviceAccount = require("path/to/serviceAccountKey.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://maddentest-80070.firebaseio.com"
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://maddentest-80070.firebaseio.com"
+// });
+//
 
 
 app.set('port', (process.env.PORT || 3001));
@@ -181,3 +194,4 @@ app.post('/:username/:platform/:leagueId/team/:teamId/roster', (req, res) => {
 app.listen(app.get('port'), () =>
     console.log('Madden Data is running on port', app.get('port'))
 );
+
