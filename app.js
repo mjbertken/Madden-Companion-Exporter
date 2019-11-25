@@ -9,7 +9,7 @@ const app = express();
 // Need help with this step go here: https://firebase.google.com/docs/admin/setup
 // const serviceAccount = require("./serviceAccountKey.json");
 // const serviceAccount = require("serviceAccountKey.json");
-const serviceAccount = require("./maddentest-80070-0b5fdc494b48.json");
+const serviceAccount = require("./serviceAccountKey.json");
 
 
 
