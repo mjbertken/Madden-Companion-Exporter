@@ -8,14 +8,18 @@ const app = express();
 // TODO: Enter the path to your service account json file
 // Need help with this step go here: https://firebase.google.com/docs/admin/setup
 // const serviceAccount = require("./serviceAccountKey.json");
-const serviceAccount = require("serviceAccountKey.json");
+// const serviceAccount = require("serviceAccountKey.json");
 // const serviceAccount = require("path/to/serviceAccountKey.json");
 
 
 // TODO: Enter your database url from firebase
+// var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://maddentest-80070.firebaseio.com"
+  databaseURL: "https://cfm-test-1.firebaseio.com"
 });
 //
 // TODO: Enter the path to your service account json file
